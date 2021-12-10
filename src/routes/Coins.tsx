@@ -14,7 +14,7 @@ const Container = styled.div`
 const Header = styled.header`
   height: 10vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 `;
 
@@ -22,7 +22,7 @@ const CoinsList = styled.ul``;
 
 const Coin = styled.li`
   background-color: white;
-  color: ${(props) => props.theme.bgColor};
+  color: #333;
   padding: 20px;
   border-radius: 15px;
   margin-bottom: 10px;

@@ -1,6 +1,11 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import Router from "./Router";
 import { ReactQueryDevtools } from "react-query/devtools";
+import { ThemeProvider } from "styled-components";
+import { lighttheme, darktheme } from "./theme";
+import { useState } from "react";
+import Toggle from "./routes/Toggle";
+import { Link } from "react-router-dom";
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
@@ -63,14 +68,35 @@ a{
 }
 *{box-sizing:border-box;}
 `;
+interface IToggle {
+  isToggled: boolean;
+  onToggle: any;
+}
+
+const Top = styled.div`
+  max-width: 480px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 20px;
+`;
 
 function App() {
+  const [isToggled, setIsToggled] = useState(false);
+  const onToggle = () => {
+    setIsToggled(!isToggled);
+  };
+
   return (
-    <>
+    <ThemeProvider theme={isToggled === false ? lighttheme : darktheme}>
       <GlobalStyle />
+      <Top>
+        <Toggle isToggled={isToggled} onToggle={onToggle} />
+      </Top>
       <Router />
       <ReactQueryDevtools initialIsOpen={true} />
-    </>
+    </ThemeProvider>
   );
 }
 

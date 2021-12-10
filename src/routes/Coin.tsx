@@ -13,6 +13,7 @@ import styled from "styled-components";
 import { fetchCoinInfo, fetchCoinTickers } from "../api";
 import Chart from "./Chart";
 import Price from "./Price";
+import Toggle from "./Toggle";
 
 //styled
 const Container = styled.div`
@@ -21,7 +22,7 @@ const Container = styled.div`
   margin: 0 auto;
 `;
 const Header = styled.header`
-  height: 10vh;
+  height: 20vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,7 +39,7 @@ const Loader = styled.span`
 const Overview = styled.div`
   display: flex;
   justify-content: space-between;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: ${(props) => props.theme.tabColor};
   padding: 10px 20px;
   border-radius: 10px;
 `;
@@ -69,7 +70,7 @@ const Tab = styled.span<{ isActive: boolean }>`
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 400;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: ${(props) => props.theme.tabColor};
   padding: 7px 0px;
   border-radius: 10px;
   color: ${(props) =>
@@ -140,6 +141,15 @@ interface IPriceData {
     };
   };
 }
+const BackBtn = styled.button`
+  color: ${(props) => props.theme.bgColor};
+  background-color: ${(props) => props.theme.textColor};
+  border: none;
+  padding: 5px;
+  margin-left: 10px;
+  font-style: italic;
+  cursor: pointer;
+`;
 
 function Coin() {
   const { coinId } = useParams<RouteParams>();
@@ -192,6 +202,9 @@ function Coin() {
         <Title>
           {state?.name ? state.name : loading ? "Loading.." : infoData?.name}
         </Title>
+        <Link to={"/"}>
+          <BackBtn>Back</BackBtn>
+        </Link>
         {/* home 안 거쳐 오면 state가 undefined여서 state가 false일때 */}
       </Header>
       {loading ? (
@@ -235,7 +248,7 @@ function Coin() {
 
           <Switch>
             <Route path={`/${coinId}/price`}>
-              <Price />
+              <Price coinId={coinId} />
             </Route>
             <Route path={`/${coinId}/chart`}>
               <Chart coinId={coinId} />
