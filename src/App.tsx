@@ -1,11 +1,9 @@
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
 import Router from "./Router";
 import { ReactQueryDevtools } from "react-query/devtools";
-import { ThemeProvider } from "styled-components";
 import { lighttheme, darktheme } from "./theme";
-import { useState } from "react";
-import Toggle from "./routes/Toggle";
-import { Link } from "react-router-dom";
+import { useRecoilValue } from "recoil";
+import { isDarkAtom } from "./atoms";
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
@@ -58,6 +56,8 @@ table {
   border-spacing: 0;
 }
 body{
+  font-weight:300;
+  line-height:1.2;
   font-family: 'Source Sans Pro', sans-serif;
   background-color: ${(props) => props.theme.bgColor};
   color:${(props) => props.theme.textColor}
@@ -68,35 +68,26 @@ a{
 }
 *{box-sizing:border-box;}
 `;
-interface IToggle {
-  isToggled: boolean;
-  onToggle: any;
-}
 
-const Top = styled.div`
-  max-width: 480px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
-  margin-top: 20px;
-`;
+// const Top = styled.div`
+//   max-width: 480px;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   margin: 0 auto;
+//   margin-top: 20px;
+// `;
 
 function App() {
-  const [isToggled, setIsToggled] = useState(false);
-  const onToggle = () => {
-    setIsToggled(!isToggled);
-  };
-
+  const isDark = useRecoilValue(isDarkAtom);
   return (
-    <ThemeProvider theme={isToggled === false ? lighttheme : darktheme}>
-      <GlobalStyle />
-      <Top>
-        <Toggle isToggled={isToggled} onToggle={onToggle} />
-      </Top>
-      <Router />
-      <ReactQueryDevtools initialIsOpen={true} />
-    </ThemeProvider>
+    <>
+      <ThemeProvider theme={isDark ? darktheme : lighttheme}>
+        <GlobalStyle />
+        <Router />
+        <ReactQueryDevtools initialIsOpen={true} />
+      </ThemeProvider>
+    </>
   );
 }
 

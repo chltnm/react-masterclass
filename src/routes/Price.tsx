@@ -47,7 +47,7 @@ const PriceUl = styled.ul`
 const PriceLi = styled.li`
   display: flex;
   justify-content: space-between;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #e6e6e633;
   padding: 15px;
   border-radius: 15px;
   margin-bottom: 10px;

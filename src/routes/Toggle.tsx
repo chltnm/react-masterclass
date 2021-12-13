@@ -1,28 +1,28 @@
 import { useState } from "react";
-import styled from "styled-components";
-import styles from "../Toggle.module.css";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import { isDarkAtom } from "../atoms";
+import styles from "./Toggle.module.css";
 
-interface IToggle {
-  isToggled: boolean;
-  onToggle: any;
-}
-const ToggleWrap = styled.div``;
-const Toggle = ({ isToggled, onToggle }: IToggle) => {
+interface IToggle {}
+
+const Toggle = ({}: IToggle) => {
+  const isDark = useRecoilValue(isDarkAtom);
+  const setDarkAtom = useSetRecoilState(isDarkAtom);
+  const toggleDarkAtom = () => setDarkAtom((prev) => !prev);
+
   return (
-    <ToggleWrap>
-      <span className={styles.toggleName}>Light/Dark</span>
-
+    <>
+      <span className={styles.emoji}>{isDark ? "🌙" : "☀️"}</span>
       <label className={styles.switch}>
         <input
           type="checkbox"
-          checked={isToggled}
-          onChange={onToggle}
+          onChange={toggleDarkAtom}
           name="toggleCheckbox"
           className={styles.toggleCheckbox}
         />
         <span className={styles.slider} />
       </label>
-    </ToggleWrap>
+    </>
   );
 };
 

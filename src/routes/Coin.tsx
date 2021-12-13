@@ -14,6 +14,8 @@ import { fetchCoinInfo, fetchCoinTickers } from "../api";
 import Chart from "./Chart";
 import Price from "./Price";
 import Toggle from "./Toggle";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { isDarkAtom } from "../atoms";
 
 //styled
 const Container = styled.div`
@@ -23,13 +25,27 @@ const Container = styled.div`
 `;
 const Header = styled.header`
   height: 20vh;
+  max-width: 480px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 `;
 const Title = styled.h1`
   font-size: 48px;
   color: ${(props) => props.theme.accentColor};
+  width: 400px;
+  display: flex;
+  align-items: center;
+`;
+const BackBtn = styled.button`
+  color: ${(props) => props.theme.bgColor};
+  background-color: ${(props) => props.theme.textColor};
+  border: none;
+  padding: 5px;
+  margin-left: 10px;
+  font-style: italic;
+  cursor: pointer;
+  width: 50px;
 `;
 const Loader = styled.span`
   text-align: center;
@@ -141,15 +157,8 @@ interface IPriceData {
     };
   };
 }
-const BackBtn = styled.button`
-  color: ${(props) => props.theme.bgColor};
-  background-color: ${(props) => props.theme.textColor};
-  border: none;
-  padding: 5px;
-  margin-left: 10px;
-  font-style: italic;
-  cursor: pointer;
-`;
+
+interface ICoinProps {}
 
 function Coin() {
   const { coinId } = useParams<RouteParams>();
@@ -202,6 +211,7 @@ function Coin() {
         <Title>
           {state?.name ? state.name : loading ? "Loading.." : infoData?.name}
         </Title>
+        <Toggle />
         <Link to={"/"}>
           <BackBtn>Back</BackBtn>
         </Link>
