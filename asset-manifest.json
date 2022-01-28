@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/react-masterclass/static/css/main.a0fbb2c2.chunk.css",
-    "main.js": "/react-masterclass/static/js/main.199cc543.chunk.js",
-    "main.js.map": "/react-masterclass/static/js/main.199cc543.chunk.js.map",
-    "runtime-main.js": "/react-masterclass/static/js/runtime-main.d438d1f4.js",
-    "runtime-main.js.map": "/react-masterclass/static/js/runtime-main.d438d1f4.js.map",
-    "static/js/2.3bf40887.chunk.js": "/react-masterclass/static/js/2.3bf40887.chunk.js",
-    "static/js/2.3bf40887.chunk.js.map": "/react-masterclass/static/js/2.3bf40887.chunk.js.map",
-    "index.html": "/react-masterclass/index.html",
-    "static/css/main.a0fbb2c2.chunk.css.map": "/react-masterclass/static/css/main.a0fbb2c2.chunk.css.map",
-    "static/js/2.3bf40887.chunk.js.LICENSE.txt": "/react-masterclass/static/js/2.3bf40887.chunk.js.LICENSE.txt"
+    "main.css": "/react-masterclass-coin/static/css/main.a0fbb2c2.chunk.css",
+    "main.js": "/react-masterclass-coin/static/js/main.a7c22305.chunk.js",
+    "main.js.map": "/react-masterclass-coin/static/js/main.a7c22305.chunk.js.map",
+    "runtime-main.js": "/react-masterclass-coin/static/js/runtime-main.2822f17e.js",
+    "runtime-main.js.map": "/react-masterclass-coin/static/js/runtime-main.2822f17e.js.map",
+    "static/js/2.fd2bc88f.chunk.js": "/react-masterclass-coin/static/js/2.fd2bc88f.chunk.js",
+    "static/js/2.fd2bc88f.chunk.js.map": "/react-masterclass-coin/static/js/2.fd2bc88f.chunk.js.map",
+    "index.html": "/react-masterclass-coin/index.html",
+    "static/css/main.a0fbb2c2.chunk.css.map": "/react-masterclass-coin/static/css/main.a0fbb2c2.chunk.css.map",
+    "static/js/2.fd2bc88f.chunk.js.LICENSE.txt": "/react-masterclass-coin/static/js/2.fd2bc88f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.d438d1f4.js",
-    "static/js/2.3bf40887.chunk.js",
+    "static/js/runtime-main.2822f17e.js",
+    "static/js/2.fd2bc88f.chunk.js",
     "static/css/main.a0fbb2c2.chunk.css",
-    "static/js/main.199cc543.chunk.js"
+    "static/js/main.a7c22305.chunk.js"
   ]
 }
