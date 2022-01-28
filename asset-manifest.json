@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/react-masterclass/static/css/main.a0fbb2c2.chunk.css",
-    "main.js": "/react-masterclass/static/js/main.ac58a446.chunk.js",
-    "main.js.map": "/react-masterclass/static/js/main.ac58a446.chunk.js.map",
+    "main.js": "/react-masterclass/static/js/main.199cc543.chunk.js",
+    "main.js.map": "/react-masterclass/static/js/main.199cc543.chunk.js.map",
     "runtime-main.js": "/react-masterclass/static/js/runtime-main.d438d1f4.js",
     "runtime-main.js.map": "/react-masterclass/static/js/runtime-main.d438d1f4.js.map",
-    "static/js/2.ccae13e3.chunk.js": "/react-masterclass/static/js/2.ccae13e3.chunk.js",
-    "static/js/2.ccae13e3.chunk.js.map": "/react-masterclass/static/js/2.ccae13e3.chunk.js.map",
+    "static/js/2.3bf40887.chunk.js": "/react-masterclass/static/js/2.3bf40887.chunk.js",
+    "static/js/2.3bf40887.chunk.js.map": "/react-masterclass/static/js/2.3bf40887.chunk.js.map",
     "index.html": "/react-masterclass/index.html",
     "static/css/main.a0fbb2c2.chunk.css.map": "/react-masterclass/static/css/main.a0fbb2c2.chunk.css.map",
-    "static/js/2.ccae13e3.chunk.js.LICENSE.txt": "/react-masterclass/static/js/2.ccae13e3.chunk.js.LICENSE.txt"
+    "static/js/2.3bf40887.chunk.js.LICENSE.txt": "/react-masterclass/static/js/2.3bf40887.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.d438d1f4.js",
-    "static/js/2.ccae13e3.chunk.js",
+    "static/js/2.3bf40887.chunk.js",
     "static/css/main.a0fbb2c2.chunk.css",
-    "static/js/main.ac58a446.chunk.js"
+    "static/js/main.199cc543.chunk.js"
   ]
 }
